@@ -1,8 +1,14 @@
-import { ThreeElements, useFrame } from "@react-three/fiber";
+import { SphereType } from "@/types/types";
+import { useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { Mesh } from "three";
 
-const Sphere = (props: ThreeElements["mesh"]) => {
+const Sphere = (props: SphereType) => {
+  const {
+    materialColor = "#2f74c0",
+    materialColorHover = "hotpink",
+    sphereGeometryArgs = []
+  } = props;
   const meshRef = useRef<Mesh>(null!);
 
   const [hovered, setHover] = useState(false);
@@ -23,8 +29,10 @@ const Sphere = (props: ThreeElements["mesh"]) => {
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
     >
-      <sphereGeometry args={[1, 32, 32]} />
-      <meshStandardMaterial color={hovered ? "hotpink" : "#2f74c0"} />
+      <sphereGeometry args={sphereGeometryArgs} />
+      <meshStandardMaterial
+        color={hovered ? materialColorHover : materialColor}
+      />
     </mesh>
   );
 };
