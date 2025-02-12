@@ -15,4 +15,7 @@ export type SphereType = {
   materialColorHover?: string;
   sphereGeometryArgs?: SphereGeometryArgsType;
   name?: string;
+  texturePath?: string;
+  emissiveColor?: string;
+  emissiveIntensity?: number;
 } & ThreeElements["mesh"];

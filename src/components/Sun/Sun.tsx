@@ -5,9 +5,10 @@ const Sun = (props: SphereType) => {
   return (
     <Sphere
       {...props}
-      materialColor="#FC9601"
-      materialColorHover="#D14009"
-      sphereGeometryArgs={[1, 32, 32]}
+      texturePath="/textures/sun.jpg"
+      emissiveColor="#FC9601"
+      emissiveIntensity={1.0}
+      sphereGeometryArgs={[1, 64, 64]}
       name="The Sun"
     />
   );
