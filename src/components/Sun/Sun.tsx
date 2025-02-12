@@ -8,6 +8,7 @@ const Sun = (props: SphereType) => {
       materialColor="#FC9601"
       materialColorHover="#D14009"
       sphereGeometryArgs={[1, 32, 32]}
+      name="The Sun"
     />
   );
 };

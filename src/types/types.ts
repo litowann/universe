@@ -14,4 +14,5 @@ export type SphereType = {
   materialColor?: string;
   materialColorHover?: string;
   sphereGeometryArgs?: SphereGeometryArgsType;
+  name?: string;
 } & ThreeElements["mesh"];
