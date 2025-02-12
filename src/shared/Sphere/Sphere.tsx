@@ -1,7 +1,7 @@
 import { SphereType } from "@/types/types";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useRef, useState } from "react";
-import { Mesh, TextureLoader } from "three";
+import { Mesh, TextureLoader, RepeatWrapping } from "three";
 import { Text } from "@react-three/drei";
 
 const Sphere = (props: SphereType) => {
@@ -19,12 +19,16 @@ const Sphere = (props: SphereType) => {
 
   const texture = useLoader(TextureLoader, texturePath || "");
 
+  texture.wrapS = RepeatWrapping;
+  texture.wrapT = RepeatWrapping;
+
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
 
   useFrame((_state, delta) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x += delta;
+      meshRef.current.rotation.y += 0.1 * delta;
+      texture.offset.x += 0.05 * delta;
     }
   });
 

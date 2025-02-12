@@ -1,6 +1,3 @@
-import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
-
 import * as THREE from "three";
 import { extend } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
@@ -78,19 +75,4 @@ const SunShaderMaterial = shaderMaterial(
 
 extend({ SunShaderMaterial });
 
-export default function Sun() {
-  const ref = useRef<any>(null);
-
-  useFrame((_, delta) => {
-    if (ref.current) {
-      ref.current.uTime += delta;
-    }
-  });
-
-  return (
-    <mesh>
-      <sphereGeometry args={[1, 64, 64]} />
-      <sunShaderMaterial ref={ref} uColorA="#ff2f00" uColorB="#ffd000" />
-    </mesh>
-  );
-}
+export default SunShaderMaterial;
