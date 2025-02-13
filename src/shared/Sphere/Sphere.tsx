@@ -12,7 +12,8 @@ const Sphere = (props: SphereType) => {
     emissiveColor = "#000000",
     emissiveIntensity = 0,
     sphereGeometryArgs = [1, 32, 32],
-    name = "My Sphere"
+    name = "My Sphere",
+    sphereRotation = 0.1
   } = props;
 
   const meshRef = useRef<Mesh>(null!);
@@ -27,7 +28,7 @@ const Sphere = (props: SphereType) => {
 
   useFrame((_state, delta) => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += 0.1 * delta;
+      meshRef.current.rotation.y += sphereRotation * delta;
       texture.offset.x += 0.05 * delta;
     }
   });

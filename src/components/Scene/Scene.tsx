@@ -8,9 +8,9 @@ import "./styles.scss";
 
 const Scene = () => {
   const mouseButtons = {
-    LEFT: THREE.MOUSE.PAN,
+    LEFT: THREE.MOUSE.ROTATE,
     MIDDLE: THREE.MOUSE.DOLLY,
-    RIGHT: THREE.MOUSE.ROTATE
+    RIGHT: THREE.MOUSE.PAN
   };
 
   return (
@@ -19,7 +19,8 @@ const Scene = () => {
         <color attach="background" args={["black"]} />
         <ambientLight intensity={0.5} />
 
-        <OrbitControls enableRotate={false} mouseButtons={mouseButtons} />
+        <OrbitControls target={[1.2, 0, 0]} mouseButtons={mouseButtons} />
+
         <Stars />
         <spotLight
           position={[10, 10, 10]}

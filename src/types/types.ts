@@ -18,4 +18,5 @@ export type SphereType = {
   texturePath?: string;
   emissiveColor?: string;
   emissiveIntensity?: number;
+  sphereRotation?: number;
 } & ThreeElements["mesh"];

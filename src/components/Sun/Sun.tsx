@@ -10,6 +10,7 @@ export default function Sun(props: SphereType) {
       emissiveIntensity={1.0}
       sphereGeometryArgs={[1, 64, 64]}
       name="The Sun"
+      sphereRotation={0.5}
     />
   );
 }
