@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import { extend } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
 
 const SunShaderMaterial = shaderMaterial(
@@ -72,7 +71,5 @@ const SunShaderMaterial = shaderMaterial(
     }
   `
 );
-
-extend({ SunShaderMaterial });
 
 export default SunShaderMaterial;

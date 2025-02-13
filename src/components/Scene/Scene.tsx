@@ -12,6 +12,7 @@ const Scene = () => {
     MIDDLE: THREE.MOUSE.DOLLY,
     RIGHT: THREE.MOUSE.ROTATE
   };
+
   return (
     <div className="main-scene">
       <Canvas camera={{ position: [0, 0, 20], fov: 60 }}>
